@@ -8,6 +8,7 @@ jobs:
 
     steps:
           - checkout
+          - run: go get github.com/stretchr/testify
           - run: go get -v
           - run: go test ./... -v
           - run: go build -v
