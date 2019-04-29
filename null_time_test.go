@@ -38,7 +38,7 @@ func TestJsonNullTime_UnMarshallNonNullTime(t *testing.T) {
 	assert.Nil(t, e)
 	assert.NotNil(t, object.UpdatedAt)
 	assert.True(t, object.UpdatedAt.Valid)
-	assert.Contains(t, object.UpdatedAt.Time.String(), "2019-04-07 19:42:09.535")
+	assert.Contains(t, object.UpdatedAt.Time.String(), "2019-04-07")
 }
 
 func TestJsonNullTime_UnMarshallInvalidTime(t *testing.T) {
