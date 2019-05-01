@@ -25,7 +25,7 @@ func (v *JsonNullTime) UnmarshalJSON(data []byte) error {
 	}
 	if x != nil {
 		v.Valid = true
-		v.Time = time.Unix(0, *x*int64(time.Millisecond))
+		v.Time = time.Unix(0, *x * int64(time.Millisecond))
 	} else {
 		v.Valid = false
 	}
