@@ -11,7 +11,7 @@ type objectNullInt64 struct {
 	CreatedBy JsonNullInt64 `json:"id"`
 }
 
-func TestJsonNullInt64_MarshallNonNull64(t *testing.T) {
+func TestJsonNullInt64_MarshallNonNullInt64(t *testing.T) {
 
 	object := &objectNullInt64{
 		CreatedBy: JsonNullInt64{sql.NullInt64{Valid: true, Int64: 12}},
