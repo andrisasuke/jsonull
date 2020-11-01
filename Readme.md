@@ -1,4 +1,5 @@
-Handle marshall nullable sql data type, eg : `sql.NullFloat64` `sql.NullInt64` `sql.NullString` `pq.NullTime` into proper JSON format
+# jsonull
+Handle marshalling nullable sql data type, eg : `sql.NullFloat64` `sql.NullInt64` `sql.NullString` `pq.NullTime` into proper JSON format
 
 ```
 {
@@ -23,12 +24,12 @@ to be :
 ```
 
 
-Usage 
+## Usage 
 ```
 go get github.com/andrisasuke/jsonull
 ```
 
-into struct:
+example struct:
 
 ```
 type Person struct {
@@ -37,5 +38,3 @@ type Person struct {
 	Code      jsonull.JsonNullInt64   `db:"code"`
 	CreatedAt jsonull.JsonNullTime    `db:"created_at"`
 }
-```
-
