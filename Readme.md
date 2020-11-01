@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.com/andrisasuke/jsonull.svg?branch=master)](https://travis-ci.com/andrisasuke/jsonull)
+[![codecov](https://codecov.io/gh/andrisasuke/jsonull/branch/master/graph/badge.svg?token=V45A89CQMZ)](https://codecov.io/gh/andrisasuke/jsonull)
+
 # jsonull
 Handle marshalling nullable sql data type, eg : `sql.NullFloat64` `sql.NullInt64` `sql.NullString` `pq.NullTime` into proper JSON format
 
