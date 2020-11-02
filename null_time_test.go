@@ -2,10 +2,11 @@ package jsonull
 
 import (
 	"encoding/json"
-	"github.com/lib/pq"
-	"github.com/stretchr/testify/assert"
 	"testing"
 	"time"
+
+	"github.com/lib/pq"
+	"github.com/stretchr/testify/assert"
 )
 
 type objectNullTime struct {
@@ -39,6 +40,16 @@ func TestJsonNullTime_UnMarshallNonNullTime(t *testing.T) {
 	assert.NotNil(t, object.UpdatedAt)
 	assert.True(t, object.UpdatedAt.Valid)
 	assert.Contains(t, object.UpdatedAt.Time.String(), "2019-04-07")
+}
+
+func TestJsonNullTime_UnMarshallNullTime(t *testing.T) {
+	body := `{"updated_at":null}`
+	var object objectNullTime
+	e := json.Unmarshal([]byte(body), &object)
+	assert.Nil(t, e)
+	assert.NotNil(t, object.UpdatedAt)
+	assert.False(t, object.UpdatedAt.Valid)
+	assert.Contains(t, object.UpdatedAt.Time.String(), "0001-01-01")
 }
 
 func TestJsonNullTime_UnMarshallInvalidTime(t *testing.T) {
